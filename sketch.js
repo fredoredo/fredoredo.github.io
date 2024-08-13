@@ -52,7 +52,7 @@ function drawPerlinEgg(x, y, zoff, rMin, noiseScale, crispy) {
 function setup() {
   createCanvas(400, 400);
   frameRate(60);
-  eggSound = loadSound("sizzling.mp3", loaded);
+  eggSound = loadSound("/assets/sizzling.mp3", loaded);
   eggSound.setVolume(soundVolBase);
   zoffSlider = createSlider(0, 0.09, 0.04, 0.0025);
   noiseScaleSlider = createSlider(0, 0.9, 0.45, 0.05);
