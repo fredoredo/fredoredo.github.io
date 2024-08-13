@@ -13,6 +13,7 @@ const crispyColor = [200, 120, 35];
 let eggSound;
 let soundVolBase = 0.2;
 let soundVolCook = 0.8;
+let soundButton;
 
 function drawPerlinEgg(x, y, zoff, rMin, noiseScale, crispy) {
   // egg white
@@ -56,10 +57,17 @@ function setup() {
   eggSound.setVolume(soundVolBase);
   zoffSlider = createSlider(0, 0.09, 0.04, 0.0025);
   noiseScaleSlider = createSlider(0, 0.9, 0.45, 0.05);
+  button = createButton("sound on/off");
+  button.position(0,0);
+  button.mousePressed(loaded);
 }
 
 function loaded() {
-  eggSound.loop();
+  if (eggSound.isLooping()) {
+    eggSound.pause();
+  } else {
+    eggSound.loop();
+  }
 }
 
 function draw() {
